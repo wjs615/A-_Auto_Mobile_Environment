@@ -1,23 +1,23 @@
 
-%±âÁ¸ µ¥ÀÌÅÍ
-u=udp('192.168.140.92','remoteport',41475,'Localport',41475,'Timeout',10);
+%ê¸°ì¡´ ë°ì´í„°
+u=udp(                                  );
 fopen(u)
 data=fread(u,32)
-%Áö¿ª¼³Á¤
+%ì§€ì—­ì„¤ì •
 site_T=data(1,1)
-%±â»óÅ¸ÀÔ
+%ê¸°ìƒíƒ€ìž…
 Weather_T=data(5,1)
-%ºñ ´ÜÀ§
+%ë¹„ ë‹¨ìœ„
 Rain_T=data(9,1)
-%´« ´ÜÀ§
+%ëˆˆ ë‹¨ìœ„
 Snow_T=data(13,1)
-%¾È°³¼³Á¤
+%ì•ˆê°œì„¤ì •
 Fog_T=data(17,1)
-%¾È°³ ´ÜÀ§
+%ì•ˆê°œ ë‹¨ìœ„
 Fog_T1=data(21,1)
-%ÇÞºû
+%í–‡ë¹›
 g=data(25,1)
-%ÇÞºû ·® ´ÜÀ§º¯È­
+%í–‡ë¹› ëŸ‰ ë‹¨ìœ„ë³€í™”
 Intensity_T=(g*1.7/100);
 %Intensity_T=0.1
 
@@ -29,17 +29,17 @@ fclose(u);
 format short;
 
 %change directory
-sn=["D:\ADD\ERROR_copy_210128\Final_Model_working\CW_SA_V2", "D:\ADD\ERROR_copy_210128\Final_Model_working\CW_SB_V2" , "D:\ADD\ERROR_copy_210128\Final_Model_working\CW_SC_V2" , "D:\ADD\ERROR_copy_210128\Final_Model_working\CW_SD_V2", "D:\ADD\ERROR_copy_210128\Final_Model_working\Jipori_V1","D:\ADD\ERROR_copy_210128\Final_Model_working\KCTC_V1"];
+sn=["...\Final_Model_working\CW_SA_V2", "...\Final_Model_working\CW_SB_V2" , "...\Final_Model_working\CW_SC_V2" , "...\Final_Model_working\CW_SD_V2", "...\Final_Model_working\Jipo_V1","...\Final_Model_working\KC_V1"];
 set_site=sn(1,site_T);
 
-%string -> char º¯È¯
+%string -> char ë³€í™˜
 cha_dir=convertStringsToChars(set_site);
 
 cd (cha_dir);
 
 
 %set experiment
-se=["CW_SA_V2","CW_SB_V2","CW_SC_V2","CW_SD_V2","Jipori_V1","KCTC_V1"];
+se=["CW_SA_V2","CW_SB_V2","CW_SC_V2","CW_SD_V2","Jipo_V1","KC_V1"];
 set_exp=se{1,site_T};
 
 
