@@ -2,6 +2,7 @@
 국방과학연구소 무인수색차량 자율주행성능입증장치 개발
 
 ## Weather_automation.m
+> 가상 주행환경 구축 프로그램인 PreScan과 MATLAB 연동한 시나리오 자동화 스크립트
 > ![image](https://user-images.githubusercontent.com/36038244/147515243-1ac31091-0b7b-4d49-891d-018218d48d78.png) <br>
 > (1) KCEI의 지역, 날씨 조건 부여 에뮬레이터 PC와 UDP 통신 IP, Port 설정 및 응답 대기시간은 10초로 설정 <br>
 > (2) 조건 부여 에뮬레이터로부터 들어오는 [32 * 1] 크기의 데이터를 각각 변수로 구분 <br> <br>
