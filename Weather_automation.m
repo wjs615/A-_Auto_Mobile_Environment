@@ -115,20 +115,8 @@ tag6=('Inten');
 
 val6=(Intensity_T);
 Command = [Command ' -set ' tag6 '=' sprintf('%.2f', val6)];
-    
- % Create the complete command
-    %Settings = cellstr('Altered Settings:');
-    %Command = ExeName;
-    %Command = [Command ' -load ' '"' MainExperiment '"'];
-    %Command = [Command ' -save ' '"' ResultDir '"'];    
-%     Command = [Command ' -set ' tag1 '=' val1];
-%     Command = [Command ' -set ' tag2 '=' val2];
-%     Command = [Command ' -set ' tag3 '=' val3];
-%     Command = [Command ' -set ' tag4 '=' val4];
-%     Command = [Command ' -set ' tag5 '=' val5];
-%     Command = [Command ' -set ' tag6 '=' val6];
-    Command = [Command ' -build'];    
-    Command = [Command ' -close'];
+Command = [Command ' -build'];    
+Command = [Command ' -close'];
     
 disp(Command) % Command
 [cmdStatus, cmdResult] = dos(Command); % dos Command
@@ -151,15 +139,13 @@ end
  
  %{ 
 
-   Store results to file.
+   %Store results to file.
    ResultFileDir = [ResultDir '\Results\'];
    [mkDirStatus,mkDirMessage,mkDirMessageid] = mkdir(ResultFileDir);
    resultFileName = [ResultFileDir 'simout.mat'];
    save(resultFileName,'simout');
    
    
-
-%Close the experiment
 %    save_system(RunModel);
 %    close_system(RunModel);
 
